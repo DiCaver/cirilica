@@ -1,0 +1,97 @@
+html,body {
+    /* background-color: #19590F; */
+    /* color: white; */
+    height: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.main {
+    width: 80%;
+    height: 100%;;
+}
+
+.col {
+    /* border: white solid 1px; */
+    text-align: center;
+}
+
+.btn:hover {
+    background: red;
+    border: red;
+}
+
+#countdown {
+    visibility: hidden;
+}
+
+.box {
+    /* flex: 1; */
+    /* margin: 1px; */
+    background: black;
+    color: green;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    font-size: 6vw;
+}
+
+.box .latin {
+    display:none;
+}
+
+.box:hover > .latin {
+    display:block;
+    color: red;
+}
+
+.box:hover > .cyrillic {
+    display: none;
+}
+
+.dBox {
+    /* flex: 1; */
+    /* margin: 1px; */
+    background: black;
+    color: white;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    font-size: 6vw;
+}
+
+.resultBox {
+    /* flex: 1; */
+    margin: 1px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    font-family: monospace;
+    text-align: left;
+}
+
+.infoBox {
+    /* flex: 1; */
+    /* margin: 1px; */
+    background: black;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+}
+
+.form-width{
+    width: 35px !important;
+    background-color: black !important;
+    color: white !important;
+    text-align: center;
+    text-transform: uppercase;
+}
