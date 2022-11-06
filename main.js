@@ -32,7 +32,7 @@ function get_something() {
     });
 }
 
-console.log(get_something());
+get_something();
 
 
 
