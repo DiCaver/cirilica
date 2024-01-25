@@ -1,97 +1,75 @@
-html,body {
-    /* background-color: #19590F; */
-    /* color: white; */
-    height: 100%;
+body {
+  background-color: #333; /* Dark gray background color */
+  color: #fff; /* Text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center content vertically */
+  margin: 0; /* Remove default body margin */
 }
 
-.sidenav {
-    height: 100%;
-    width: 20%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
+.center-content {
+  text-align: center;
 }
 
-.main {
-    width: 80%;
-    height: 100%;;
+/* Define a CSS animation called "rotate-twice" */
+@keyframes rotate-twice {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg); /* Two full rotations (360 degrees * 2) */
+  }
 }
 
-.col {
-    /* border: white solid 1px; */
-    text-align: center;
+/* Apply the animation to the image on hover */
+.flag-icon:hover {
+  animation: rotate-twice 1s ease-in-out; /* Adjust the duration as needed */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* Add a subtle shadow on hover */
+  border-radius: 50%;
 }
 
-.btn:hover {
-    background: red;
-    border: red;
+.form-switch .form-check-input:checked {
+  background-position: right center;
+  background-image: url(/img/switch_si.png);
 }
 
-#countdown {
-    visibility: hidden;
+.form-switch .form-check-input:not(:checked) {
+  background-position: left center;
+  background-image: url(/img/switch_uk.png);
 }
 
-.box {
-    /* flex: 1; */
-    /* margin: 1px; */
-    background: black;
-    color: green;
-    /* display: flex; */
-    align-items: center;
-    justify-content: center;
-    font-size: 6vw;
+.form-check-input:checked {
+  background-color: #0333;
+  border-color: #fff;
 }
 
-.box .latin {
-    display:none;
+.form-check-input:not(:checked) {
+  background-color: #0333;
+  border-color: #fff;
 }
 
-.box:hover > .latin {
-    display:block;
-    color: red;
+.form-check-input:focus {
+  border-color: #fff;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
-.box:hover > .cyrillic {
-    display: none;
+.table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.dBox {
-    /* flex: 1; */
-    /* margin: 1px; */
-    background: black;
-    color: white;
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    font-size: 6vw;
+.table td {
+  border: 1px solid #888; /* Gray border color */
+  padding: 8px;
+  text-align: center;
 }
 
-.resultBox {
-    /* flex: 1; */
-    margin: 1px;
-    background: white;
-    color: black;
-    font-size: 16px;
-    font-family: monospace;
-    text-align: left;
+.table tbody tr:nth-child(odd) {
+  background-color: #333 !important; /* Transparent background for odd rows */
 }
 
-.infoBox {
-    /* flex: 1; */
-    /* margin: 1px; */
-    background: black;
-    color: white;
-    font-size: 16px;
-    text-align: left;
-}
-
-.form-width{
-    width: 35px !important;
-    background-color: black !important;
-    color: white !important;
-    text-align: center;
-    text-transform: uppercase;
+.table tbody tr:nth-child(even) {
+  background-color: #333 !important; /* Transparent background for even rows */
 }

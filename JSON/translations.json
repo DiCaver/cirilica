@@ -1,0 +1,16 @@
+{
+  "slovenian": {
+    "languageLabel": "Slovenščina",
+    "choose_cyrillic": "Izberi cirilico",
+    "about": "O strani",
+    "copyright": "2023 Cirilica. Vse pravice pridržane.",
+    "home": "Domov"
+  },
+  "english": {
+    "languageLabel": "English",
+    "choose_cyrillic": "Choose Cyrillic",
+    "about": "About",
+    "copyright": "2023 Cirilica. All rights reserved.",
+    "home": "Home"
+  }
+}
