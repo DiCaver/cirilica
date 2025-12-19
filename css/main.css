@@ -86,3 +86,23 @@ body {
 .cell:hover {
   background-color: #222;
 }
+
+.card {
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+#cyrillic-letter {
+  font-size: 6rem;
+}
+
+#results ul {
+  list-style: none;
+  padding: 0;
+}
+
+#results li::before {
+  content: "❌ ";
+  color: red;
+  margin-right: 0.5em;
+}

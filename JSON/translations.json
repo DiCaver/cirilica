@@ -4,13 +4,17 @@
     "choose_cyrillic": "Izberi cirilico",
     "about": "O strani",
     "copyright": "2023 Cirilica. Vse pravice pridržane.",
-    "home": "Domov"
+    "home": "Domov",
+    "test_knowledge": "Preveri svoje znanje",
+    "random_letters": "Premešaj črke"
   },
   "english": {
     "languageLabel": "English",
     "choose_cyrillic": "Choose Cyrillic",
     "about": "About",
     "copyright": "2023 Cirilica. All rights reserved.",
-    "home": "Home"
+    "home": "Home",
+    "test_knowledge": "Test your knowledge",
+    "random_letters": "Shuffle letters"
   }
 }
