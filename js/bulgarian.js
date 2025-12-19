@@ -74,9 +74,11 @@ let stats = {
   correct: 0,
   wrongAnswers: {},
 };
+let letterStartTime = 0; // timestamp when letter is shown
+let timings = []; // array of { letter, timeInMs }
 
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("json/bulgarian.json")
+  fetch("./json/bulgarian.json")
     .then((response) => response.json())
     .then((data) => {
       testData = data;
@@ -149,6 +151,7 @@ function nextLetter() {
   input.focus(); // keep focus in input
 
   document.getElementById("user-input").focus();
+  letterStartTime = Date.now();
 }
 
 function handleInput(e) {
@@ -174,6 +177,12 @@ function checkAnswer(input, expected) {
     const letter = testData.cyrillic[currentIndex];
     stats.wrongAnswers[letter] = (stats.wrongAnswers[letter] || 0) + 1;
   }
+
+  const timeTaken = Date.now() - letterStartTime;
+  timings.push({
+    letter: testData.cyrillic[currentIndex],
+    time: timeTaken,
+  });
 
   setTimeout(() => {
     feedback.textContent = "";
@@ -211,6 +220,25 @@ function endTest() {
     wrongStats += "</ul>";
   }
 
+  // ⏱️ Analyze slow letters
+  const avgTime = timings.reduce((sum, t) => sum + t.time, 0) / timings.length;
+
+  const slowerThanAverage = timings
+    .filter((t) => t.time > avgTime)
+    .sort((a, b) => b.time - a.time)
+    .slice(0, 5); // top 5 slowest
+
+  let slowLettersHTML = "";
+  if (slowerThanAverage.length > 0) {
+    slowLettersHTML = "<h4 class='mt-3'>Letters You Hesitated On:</h4><ul>";
+    slowerThanAverage.forEach((entry) => {
+      slowLettersHTML += `<li>${entry.letter} — ${(entry.time / 1000).toFixed(
+        2
+      )}s</li>`;
+    });
+    slowLettersHTML += "</ul>";
+  }
+
   // Show results
   resultsDiv.innerHTML = `
     <h3 class="text-success">✅ Time's Up!</h3>
@@ -218,6 +246,7 @@ function endTest() {
     <p><strong>Correct:</strong> ${stats.correct}</p>
     <p><strong>Accuracy:</strong> ${percentage}%</p>
     ${wrongStats}
+    ${slowLettersHTML}
     <button class="btn btn-outline-light mt-3" onclick="location.reload()">🔁 Try Again</button>
   `;
   resultsDiv.style.display = "block";
