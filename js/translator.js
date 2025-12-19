@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
     // Fetch translations from the JSON file after the delay
-    fetch("JSON/translations.json")
+    fetch("json/translations.json")
       .then((response) => response.json())
       .then((data) => {
         translations = data;

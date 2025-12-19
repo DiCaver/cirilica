@@ -18,7 +18,7 @@ function processData(data) {
 }
 
 // Use the fetch API to load the JSON file
-fetch("JSON/bulgarian.json")
+fetch("json/bulgarian.json")
   .then((response) => response.json())
   .then((data) => {
     // Call the processData function with the fetched data

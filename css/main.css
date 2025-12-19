@@ -106,3 +106,17 @@ body {
   color: red;
   margin-right: 0.5em;
 }
+
+#results .slow-letters li::before {
+  content: "🐢 ";
+  color: orange;
+}
+
+#user-input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}

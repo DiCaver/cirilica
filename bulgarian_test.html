@@ -11,31 +11,31 @@
     <link rel="stylesheet" href="./css/main.css" />
 </head>
 
-<body class="bg-dark d-flex align-items-center justify-content-center vh-100 text-light">
+<body class="d-flex align-items-center justify-content-center vh-100 text-light">
     <div w3-include-html="header.html"></div>
 
     <div class="container" style="max-width: 600px;">
         <div class="card bg-dark text-light shadow border-0">
             <div class="card-body text-center">
-                <h2 class="card-title mb-4">🧠 Test your Cyrillic Knowledge</h2>
+                <h2 class="card-title mb-4" data-translate="test-title">🧠 Preveri svoje znanje</h2>
 
                 <div id="settings">
 
                     <div class="mb-3 text-start">
-                        <label class="form-label">Choose Layout:</label><br>
+                        <label class="form-label" data-translate="choose-layout">Choose Layout:</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="layout" id="layout1" value="latin"
                                 checked>
-                            <label class="form-check-label" for="layout1">Latin (Š, Č)</label>
+                            <label class="form-check-label" for="layout1">Č, Š, Ž</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="layout" id="layout2" value="latinEN">
-                            <label class="form-check-label" for="layout2">Latin (SH, CH)</label>
+                            <label class="form-check-label" for="layout2">CH, SH, ZH</label>
                         </div>
                     </div>
 
                     <div class="mb-3 text-start">
-                        <label class="form-label">Choose Duration:</label><br>
+                        <label class="form-label" data-translate="choose-duration">Choose Duration:</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="duration" id="dur1" value="1">
                             <label class="form-check-label" for="dur1">1 min</label>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
 
-                    <button id="start-button" class="btn btn-warning w-100 mb-3">🚀 Start</button>
+                    <button id="start-button" class="btn btn-warning w-100 mb-3" data-translate="start-button">🚀 Start</button>
 
                 </div>
 
@@ -58,9 +58,9 @@
                     <div id="timer" class="mb-3 fs-4">⏳ 00:00</div>
 
                     <h2 id="cyrillic-letter" class="display-1 fw-bold"></h2>
-                    <input type="text" id="user-input"
-                        class="form-control form-control-lg text-center mt-3 visually-hidden" maxlength="3" autofocus
-                        placeholder="Type answer and press Enter">
+                    <input type="text" id="user-input" class="form-control form-control-lg text-center mt-3"
+                        maxlength="3" autofocus autocomplete="off" autocorrect="off" autocapitalize="off"
+                        spellcheck="false">
                     <div id="feedback" class="mt-3 fs-5"></div>
                 </div>
 

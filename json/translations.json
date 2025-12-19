@@ -6,7 +6,21 @@
     "copyright": "2023 Cirilica. Vse pravice pridržane.",
     "home": "Domov",
     "test_knowledge": "Preveri svoje znanje",
-    "random_letters": "Premešaj črke"
+    "random_letters": "Premešaj črke",
+    "test-title": "🧠 Preveri svoje znanje",
+    "choose-layout": "Izberi postavitev",
+    "choose-duration": "Izberi trajanje",
+    "start-button": "🚀 Začni",
+    "correct": "✔ Pravilno",
+    "incorrect": "✖ Napačno",
+    "space-auto-advance": "⏳ Presledek - samodejno nadaljevanje...",
+    "most-missed-letters": "Najpogosteje zgrešene črke:",
+    "letters-you-hesitated-on": "Črke, pri katerih si okleval:",
+    "times-up": "✅ Čas je potekel!",
+    "total": "Skupaj:",
+    "correct_result": "Pravilno:",
+    "accuracy": "Natančnost:",
+    "try-again": "🔁 Poskusi znova"
   },
   "english": {
     "languageLabel": "English",
@@ -15,6 +29,20 @@
     "copyright": "2023 Cirilica. All rights reserved.",
     "home": "Home",
     "test_knowledge": "Test your knowledge",
-    "random_letters": "Shuffle letters"
+    "random_letters": "Shuffle letters",
+    "test-title": "🧠 Test your knowledge",
+    "choose-layout": "Choose Layout",
+    "choose-duration": "Choose Duration",
+    "start-button": "🚀 Start",
+    "correct": "✔ Correct",
+    "incorrect": "✖ Incorrect",
+    "space-auto-advance": "⏳ Space character - auto-advancing...",
+    "most-missed-letters": "Most Missed Letters:",
+    "letters-you-hesitated-on": "Letters You Hesitated On:",
+    "times-up": "✅ Time's Up!",
+    "total": "Total:",
+    "correct_result": "Correct:",
+    "accuracy": "Accuracy:",
+    "try-again": "🔁 Try Again"
   }
 }
