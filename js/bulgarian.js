@@ -78,7 +78,7 @@ let letterStartTime = 0; // timestamp when letter is shown
 let timings = []; // array of { letter, timeInMs }
 
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("./json/bulgarian.json")
+  fetch("json/bulgarian.json")
     .then((response) => response.json())
     .then((data) => {
       testData = data;
