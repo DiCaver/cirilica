@@ -1,11 +1,15 @@
 body {
-  background-color: #333; /* Dark gray background color */
-  color: #fff; /* Text color */
+  background-color: #333;
+  /* Dark gray background color */
+  color: #fff;
+  /* Text color */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Center content vertically */
-  margin: 0; /* Remove default body margin */
+  height: 100vh;
+  /* Center content vertically */
+  margin: 0;
+  /* Remove default body margin */
 }
 
 .center-content {
@@ -17,15 +21,19 @@ body {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
-    transform: rotate(720deg); /* Two full rotations (360 degrees * 2) */
+    transform: rotate(720deg);
+    /* Two full rotations (360 degrees * 2) */
   }
 }
 
 /* Apply the animation to the image on hover */
 .flag-icon:hover {
-  animation: rotate-twice 1s ease-in-out; /* Adjust the duration as needed */
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* Add a subtle shadow on hover */
+  animation: rotate-twice 1s ease-in-out;
+  /* Adjust the duration as needed */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  /* Add a subtle shadow on hover */
   border-radius: 50%;
 }
 
@@ -71,6 +79,8 @@ body {
   border: 1px solid #ccc;
   font-size: 32px;
   transition: background-color 0.3s, color 0.3s;
+  align-self: center;
+  justify-self: center;
 }
 
 .cell:hover {
