@@ -136,6 +136,7 @@ if (document.URL.includes("bulgarian_test.html")) {
       .getElementById("user-input")
       .addEventListener("input", handleInput);
     nextLetter();
+    showInputInstructionIfMobile();
   }
 
   function updateTimerDisplay() {
@@ -305,5 +306,12 @@ if (document.URL.includes("bulgarian_test.html")) {
     <button class="btn btn-outline-light mt-3" onclick="location.reload()" data-translate="try-again">${tryAgainTranslation}</button>
   `;
     resultsDiv.style.display = "block";
+  }
+
+  function showInputInstructionIfMobile() {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      document.getElementById("tap-instruction").classList.remove("d-none");
+    }
   }
 }
