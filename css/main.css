@@ -1,15 +1,7 @@
 body {
   background-color: #333;
-  /* Dark gray background color */
   color: #fff;
-  /* Text color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  /* Center content vertically */
   margin: 0;
-  /* Remove default body margin */
 }
 
 .center-content {
@@ -37,36 +29,12 @@ body {
   border-radius: 50%;
 }
 
-.form-switch .form-check-input:checked {
-  background-position: right center;
-  background-image: url(/img/switch_si.png);
-}
-
-.form-switch .form-check-input:not(:checked) {
-  background-position: left center;
-  background-image: url(/img/switch_uk.png);
-}
-
-.form-check-input:checked {
-  background-color: #0333;
-  border-color: #fff;
-}
-
-.form-check-input:not(:checked) {
-  background-color: #0333;
-  border-color: #fff;
-}
-
-.form-check-input:focus {
-  border-color: #fff;
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-
 #alphabet-table {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(5, 1fr);
   gap: 5px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .cell {
@@ -77,10 +45,36 @@ body {
   align-items: center;
   background-color: #333;
   border: 1px solid #ccc;
-  font-size: 32px;
+  font-size: 28px;
   transition: background-color 0.3s, color 0.3s;
-  align-self: center;
-  justify-self: center;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  #alphabet-table {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+
+  .cell {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  #alphabet-table {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+
+  .cell {
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+  }
 }
 
 .cell:hover {

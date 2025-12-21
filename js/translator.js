@@ -1,8 +1,6 @@
-// Load translations from the JSON file
 let translations;
 const defaultLanguage = "slovenian";
 
-// Function to get the value of a specific cookie
 function getCookie(name) {
   const cookies = document.cookie.split("; ");
   for (const cookie of cookies) {
@@ -14,60 +12,54 @@ function getCookie(name) {
   return null;
 }
 
-// Check if a language preference cookie exists
-const storedLanguage = getCookie("selectedLanguage");
+let currentLanguage = getCookie("selectedLanguage") || defaultLanguage;
 
-// Use the stored language or default language if not set
-const initialLanguage = storedLanguage || defaultLanguage;
-
-// Function to update text content based on the selected language
 function updateTextContent(language) {
   const elementsToTranslate = document.querySelectorAll("[data-translate]");
   elementsToTranslate.forEach((element) => {
-    const translationKey = element.getAttribute("data-translate");
-    if (translations[language] && translations[language][translationKey]) {
-      element.textContent = translations[language][translationKey];
+    const key = element.getAttribute("data-translate");
+    if (translations[language] && translations[language][key]) {
+      element.textContent = translations[language][key];
     }
   });
 }
 
-// Wait for the DOM to be ready
+function updateToggleText(language) {
+  const toggleLink = document.getElementById("languageToggle");
+  if (toggleLink) {
+    const flag = language === "slovenian" ? "uk" : "si";
+    const label = language === "slovenian" ? "English" : "Slovenščina";
+    toggleLink.innerHTML = `
+      <img src="img/switch_${flag}.png" alt="${label}" style="width: 24px; height: 24px; margin-right: 6px;">
+      ${label}
+    `;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    // Event listener for the language switch button
-    document
-      .getElementById("languageSwitch")
-      .addEventListener("change", function () {
-        let currentLanguage;
-        if (this.checked) {
-          currentLanguage = "slovenian";
-        } else {
-          currentLanguage = "english";
-        }
-        updateTextContent(currentLanguage);
+  fetch("json/translations.json")
+    .then((response) => response.json())
+    .then((data) => {
+      translations = data;
 
-        // Store the selected language in a cookie
-        document.cookie = `selectedLanguage=${currentLanguage}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
-      });
+      updateTextContent(currentLanguage);
+      updateToggleText(currentLanguage);
 
-    // Fetch translations from the JSON file after the delay
-    fetch("json/translations.json")
-      .then((response) => response.json())
-      .then((data) => {
-        translations = data;
+      const toggleLink = document.getElementById("languageToggle");
+      if (toggleLink) {
+        toggleLink.addEventListener("click", (e) => {
+          e.preventDefault();
 
-        // Set the initial language based on the stored language or default language
-        updateTextContent(initialLanguage);
+          currentLanguage =
+            currentLanguage === "slovenian" ? "english" : "slovenian";
 
-        // Update the language switch checkbox based on the initial language
-        if (initialLanguage === "slovenian") {
-          document.getElementById("languageSwitch").checked = true;
-        } else {
-          document.getElementById("languageSwitch").checked = false;
-        }
-      })
-      .catch((error) => {
-        console.error("Error loading translations:", error);
-      });
-  }, 500); // Half-second delay (500 milliseconds)
+          updateTextContent(currentLanguage);
+          updateToggleText(currentLanguage);
+          document.cookie = `selectedLanguage=${currentLanguage}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("Error loading translations:", error);
+    });
 });

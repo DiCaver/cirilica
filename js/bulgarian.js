@@ -165,7 +165,7 @@ if (document.URL.includes("bulgarian_test.html")) {
     if (expected === " ") {
       const feedback = document.getElementById("feedback");
       const spaceAutoAdvanceTranslation =
-        translations[initialLanguage]["space-auto-advance"] ||
+        translations[currentLanguage]["space-auto-advance"] ||
         "⏳ Space character - auto-advancing...";
       feedback.innerHTML = `<span style="color:orange" data-translate="space-auto-advance">${spaceAutoAdvanceTranslation}</span>`;
 
@@ -194,9 +194,9 @@ if (document.URL.includes("bulgarian_test.html")) {
     const shownExpected = expected === " " ? "[space]" : expected;
 
     const correctTranslation =
-      translations[initialLanguage]["correct"] || "✔ Correct";
+      translations[currentLanguage]["correct"] || "✔ Correct";
     const incorrectTranslation =
-      translations[initialLanguage]["incorrect"] || "✖ Incorrect";
+      translations[currentLanguage]["incorrect"] || "✖ Incorrect";
 
     if (input === expected) {
       stats.correct++;
@@ -248,7 +248,7 @@ if (document.URL.includes("bulgarian_test.html")) {
 
     if (sortedWrong.length) {
       const mostMissedLettersTranslation =
-        translations[initialLanguage]["most-missed-letters"] ||
+        translations[currentLanguage]["most-missed-letters"] ||
         "Most Missed Letters:";
       wrongStats = `<h4 class="mt-3" data-translate="most-missed-letters">${mostMissedLettersTranslation}</h4><ul>`;
       for (const [char, count] of sortedWrong.slice(0, 5)) {
@@ -269,7 +269,7 @@ if (document.URL.includes("bulgarian_test.html")) {
     let slowLettersHTML = "";
     if (slowerThanAverage.length > 0) {
       const lettersYouHesitatedOnTranslation =
-        translations[initialLanguage]["letters-you-hesitated-on"] ||
+        translations[currentLanguage]["letters-you-hesitated-on"] ||
         "Letters You Hesitated On:";
       slowLettersHTML = `<h4 class='mt-3' data-translate='letters-you-hesitated-on'>${lettersYouHesitatedOnTranslation}</h4><ul class='slow-letters'>`;
       slowerThanAverage.forEach((entry) => {
@@ -282,14 +282,14 @@ if (document.URL.includes("bulgarian_test.html")) {
 
     // Show results
     const timeUpTranslation =
-      translations[initialLanguage]["times-up"] || "✅ Time's Up!";
-    const totalTranslation = translations[initialLanguage]["total"] || "Total:";
+      translations[currentLanguage]["times-up"] || "✅ Time's Up!";
+    const totalTranslation = translations[currentLanguage]["total"] || "Total:";
     const correctTranslation =
-      translations[initialLanguage]["correct_result"] || "Correct:";
+      translations[currentLanguage]["correct_result"] || "Correct:";
     const accuracyTranslation =
-      translations[initialLanguage]["accuracy"] || "Accuracy:";
+      translations[currentLanguage]["accuracy"] || "Accuracy:";
     const tryAgainTranslation =
-      translations[initialLanguage]["try-again"] || "🔁 Try Again";
+      translations[currentLanguage]["try-again"] || "🔁 Try Again";
 
     resultsDiv.innerHTML = `
     <h3 class="text-success" data-translate="times-up">${timeUpTranslation}</h3>

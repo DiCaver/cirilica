@@ -1,5 +1,6 @@
 {
   "slovenian": {
+    "title": "Cirilica",
     "languageLabel": "Slovenščina",
     "choose_cyrillic": "Izberi cirilico",
     "about": "O strani",
@@ -23,8 +24,9 @@
     "try-again": "🔁 Poskusi znova"
   },
   "english": {
+    "title": "Cyrilica",
     "languageLabel": "English",
-    "choose_cyrillic": "Choose Cyrillic",
+    "choose_cyrillic": "Choose cyrillic",
     "about": "About",
     "copyright": "2023 Cirilica. All rights reserved.",
     "home": "Home",
@@ -32,17 +34,17 @@
     "random_letters": "Shuffle letters",
     "test-title": "🧠 Test your knowledge",
     "choose-layout": "Choose Layout",
-    "choose-duration": "Choose Duration",
+    "choose-duration": "Choose duration",
     "start-button": "🚀 Start",
     "correct": "✔ Correct",
     "incorrect": "✖ Incorrect",
     "space-auto-advance": "⏳ Space character - auto-advancing...",
-    "most-missed-letters": "Most Missed Letters:",
-    "letters-you-hesitated-on": "Letters You Hesitated On:",
+    "most-missed-letters": "Most missed letters:",
+    "letters-you-hesitated-on": "Letters you hesitated on:",
     "times-up": "✅ Time's Up!",
     "total": "Total:",
     "correct_result": "Correct:",
     "accuracy": "Accuracy:",
-    "try-again": "🔁 Try Again"
+    "try-again": "🔁 Try again"
   }
 }
