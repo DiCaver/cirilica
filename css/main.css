@@ -81,10 +81,10 @@ body {
   background-color: #222;
 }
 
-.card {
+/* .card {
   border-radius: 1rem;
   padding: 2rem;
-}
+} */
 
 #cyrillic-letter {
   font-size: 6rem;
@@ -116,8 +116,8 @@ body {
 
 @media (max-width: 768px) {
   #user-input {
-    width: 100px;
-    height: 40px;
+    width: 50px;
+    height: 10px;
     opacity: 0.1;
     position: static;
     z-index: auto;
