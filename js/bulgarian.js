@@ -159,9 +159,8 @@ if (document.URL.includes("bulgarian_test.html")) {
     const input = document.getElementById("user-input");
     input.value = "";
     input.disabled = false;
-    input.focus();
 
-    // setTimeout(() => input.focus(), 0);
+    setTimeout(() => input.focus(), 100);
 
     // 🚨 If expected is space, skip input and auto-advance
     if (expected === " ") {

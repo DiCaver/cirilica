@@ -107,12 +107,17 @@ body {
 }
 
 #user-input {
-  position: absolute;
-  left: -9999px;
-  top: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  opacity: 0.01;
+  /* Nearly invisible */
+  z-index: 1000;
   width: 1px;
   height: 1px;
-  opacity: 0;
+  border: none;
+  background: transparent;
+  color: transparent;
 }
 
 #typed-preview {
