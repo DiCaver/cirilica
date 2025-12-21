@@ -154,6 +154,7 @@ if (document.URL.includes("bulgarian_test.html")) {
     const expected = testData[activeLayout][currentIndex];
 
     document.getElementById("cyrillic-letter").textContent = cyrillic;
+    document.getElementById("typed-preview").textContent = "";
 
     const input = document.getElementById("user-input");
     input.value = "";
@@ -180,6 +181,9 @@ if (document.URL.includes("bulgarian_test.html")) {
   function handleInput(e) {
     const inputField = e.target;
     const input = inputField.value.trim().toUpperCase();
+
+    document.getElementById("typed-preview").textContent = input;
+
     const expected = testData[activeLayout][currentIndex].toUpperCase();
 
     if (expected !== " " && input.length === expected.length) {

@@ -39,8 +39,8 @@
     <div class="container text-center justify-content-center pt-2">
         <div class="card bg-dark text-light shadow border-0">
             <div class="card-body text-center">
-                <h2 class="card-title mb-4" data-translate="test-title">🧠 Preveri svoje znanje</h2>
                 <div id="settings">
+                    <h2 class="card-title mb-4" data-translate="test-title">Preveri svoje znanje</h2>
                     <div class="mb-3 text-start">
                         <label class="form-label" data-translate="choose-layout">Choose Layout:</label><br>
                         <div class="form-check form-check-inline">
@@ -68,8 +68,8 @@
                             <label class="form-check-label" for="dur5">5 min</label>
                         </div>
                     </div>
-                    <button id="start-button" class="btn btn-warning w-100 mb-3" data-translate="start-button">🚀
-                        Start</button>
+                    <button id="start-button" class="btn btn-warning w-100 mb-3"
+                        data-translate="start-button">Start</button>
                 </div>
                 <div id="quiz-container" style="display:none;">
                     <div id="timer" class="mb-3 fs-4">⏳ 00:00</div>
@@ -77,6 +77,7 @@
                     <input type="text" id="user-input" class="form-control form-control-lg text-center mt-3"
                         maxlength="3" autofocus autocomplete="off" autocorrect="off" autocapitalize="off"
                         spellcheck="false">
+                    <div id="typed-preview" class="mt-3 fs-4"></div>
                     <div id="feedback" class="mt-3 fs-5"></div>
                 </div>
                 <div id="results" class="mt-4" style="display:none;"></div>

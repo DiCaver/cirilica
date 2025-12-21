@@ -114,3 +114,8 @@ body {
   height: 1px;
   opacity: 0;
 }
+
+#typed-preview {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
