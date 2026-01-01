@@ -1,7 +1,7 @@
 body {
+  margin: 0;
   background-color: #333;
   color: #fff;
-  margin: 0;
 }
 
 .center-content {
@@ -80,11 +80,6 @@ body {
 .cell:hover {
   background-color: #222;
 }
-
-/* .card {
-  border-radius: 1rem;
-  padding: 2rem;
-} */
 
 #cyrillic-letter {
   font-size: 6rem;
